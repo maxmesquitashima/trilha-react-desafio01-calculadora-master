@@ -40,7 +40,6 @@ const App = () => {
       setOperation(op);
     } else {
       const result = calculate(firstNumber, operation, currentNumber);
-      setCurrentNumber(String(result));
       setFirstNumber(String(result));
       setCurrentNumber('0');
       setOperation(op);
@@ -112,11 +111,12 @@ const App = () => {
           <Button label="1" onClick={() => handleAddNumber('1')} />
           <Button label="2" onClick={() => handleAddNumber('2')} />
           <Button label="3" onClick={() => handleAddNumber('3')}/>
-          <Button label="=" onClick={handleEquals} className="operator"/>
+          <Button label="+" onClick={() => handleOperation('+')} className="operator"/>
         </Row>
         <Row>
           <Button label="0" onClick={() => handleAddNumber('0')} style={{flex: 2}}/>
           <Button label="." onClick={() => handleAddNumber('.')}/>
+          <Button label="=" onClick={handleEquals} className="operator"/>
         </Row>
       </Content>
     </Container>
